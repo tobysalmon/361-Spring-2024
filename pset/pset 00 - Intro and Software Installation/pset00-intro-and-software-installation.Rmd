@@ -164,7 +164,7 @@ $\to$ **Answer: The following picture is a screenshot of my Github Desktop in ac
 
 Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
 
-$\to$ **Answer: I have (1) cloned the repo and (2) created a new branch `boseong-yun`. (3) I have made an edit to the R Markdown file to have my name at the top instead of mine. To help you grade easily, I have created a folder `pset_submission_files` where all my answers (and the replication files and codes) are conveniently located in a single folder. (4) Finally, I have committed, pushed, and created a pull-request to the main branch on the 361-Spring-2024 repo with the boseong-yun as the title of my pull request**
+$\to$ **Answer: I have (1) cloned the repo and (2) created a new branch `boseong-yun`. (3) I have made an edit to the R Markdown file to have my name at the top instead of mine. (3) Finally, I have committed, pushed, and created a pull-request to the main branch on the 361-Spring-2024 repo with the boseong-yun as the title of my pull request**
 
 
 #### 10. Set up Github Copilot in RStudio
