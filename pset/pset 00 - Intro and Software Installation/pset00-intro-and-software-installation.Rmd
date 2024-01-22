@@ -109,7 +109,7 @@ library(pubtheme)
 See https://bmacgtpm.github.io/notes/software-installation.html. The code from that page is below, except a custom title has been added. Replace my name with yours, uncomment the animation code, run all of this code.
 
 
-$\to$ **Answer: I have (1) replaced the title name with my name, (2) un-commented the animation code, and (3) run all of this code. Note that my animination.gif is saved to the image folder.**
+$\to$ **Answer: I have (1) replaced the title name with my name, (2) un-commented the animation code, and (3) run all of this code. Please note that my animination.gif is saved to the `img` folder.**
 
 ```{r}
 # We'll start with a static plot
