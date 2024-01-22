@@ -1,13 +1,16 @@
 ---
 title: 'S&DS 361 Homework 0: Software Prep'
-date: "Due Tue Jan 23, 2024"
+author: "Boseong Yun (handle: boseong-yun)"
+date: "Created at `r format(Sys.time(), '%d %B, %Y')`, (Due Jan 23, 2024)"
 output:
   pdf_document: default
-  word_document: default
   html_document: default
+  # word_document: default
 ---
 
 ```{r setup, include=FALSE}
+library(knitr)
+
 knitr::opts_chunk$set(echo    = T, 
                       include = T,
                       warning = F,
@@ -16,7 +19,6 @@ knitr::opts_chunk$set(echo    = T,
                       fig.height = 5, 
                       fig.width  = 5, 
                       fig.align  = 'center')
-library(knitr)
 ```
 
 ## Part 1: Course prep and software installation
@@ -26,15 +28,16 @@ library(knitr)
 
 After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
 
-![](img/snip of Course Survey.png)
+$\to$ **Answer: The following picture is a screenshot of my survey.**
 
-Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
+![](img/survey_screenshot.png)
+
 
 #### 2. Download and install the latest version of R 
 
-See https://bmacgtpm.github.io/notes/software-installation.html for some potentially useful tips. 
-
 The following code will show your version of R when you knit the document. It should say `R version 4.3.2` or later. Make sure it appears when you knit your document.  
+
+$\to$ **Answer: The following output shows "R version 4.3.2", as desired.**
 
 ```{r}
 R.Version()$version.string
@@ -45,6 +48,8 @@ R.Version()$version.string
 See https://bmacgtpm.github.io/notes/software-installation.html for some potentially useful tips.
 
 This code will show your version of R when you knit the document. Make sure it appears when you knit your document.  It should say `2023.12.0+369` (or later).  
+
+$\to$ **Answer: The following output shows "2023.12.0+369", as desired.**
 
 ```{r}
 rstudioapi::versionInfo()$long_version
@@ -58,7 +63,10 @@ Do not write R code for installing packages in this R Markdown. You don't want p
 
 Check that you can load all of the libraries by running this chunk of code and showing that it executes without error. There may be some messages, and maybe warnings about versions. Those are ok. Make sure the output appears when you knit the document. 
 
-```{r error=T}
+
+$\to$ **Answer: Note that the following code block runs smoothly without any errors.**
+
+```{r error=T, echo = TRUE}
 library(knitr)
 library(plotly)
 library(scales)
@@ -94,12 +102,14 @@ library(maps) ## leave uncommented. For some reason GitHub Actions had a problem
 ## load tidyverse last!
 library(tidyverse)
 library(pubtheme)
-
 ```
 
 #### 5. Check `gganimate`
 
 See https://bmacgtpm.github.io/notes/software-installation.html. The code from that page is below, except a custom title has been added. Replace my name with yours, uncomment the animation code, run all of this code.
+
+
+$\to$ **Answer: I have (1) replaced the title name with my name, (2) un-commented the animation code, and (3) run all of this code. Note that my animination.gif is saved to the image folder.**
 
 ```{r}
 # We'll start with a static plot
@@ -107,67 +117,64 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Boseong Yun's animation")
 g
 
-a = g + 
-  transition_states(Species,
-                    transition_length = 2,
-                    state_length = 1)
-
-#a  ## check that the animation works
-
-## save the animation
-# anim_save(a, 
-#           filename = 'img/test animation.gif')
-
+## Commented out (Select the code chunck and press ctrl + shift + c to comment in and out)
+# a = g + 
+#   transition_states(Species,
+#                     transition_length = 2,
+#                     state_length = 1)
+# 
+# ## check that the animation works 
+# # save the animation
+# anim_save(a, filename = 'img/test animation.gif')
 ```
 
-There should be a static plot and an animated plot above. 
-If the `anim_save` worked properly there should be a new `test.gif`
-in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
+$\to$ **Answer (continued): The following is a screenshot of the animation.gif. I have included the sidebar on the left to show more clearly that it is a .gif file.**
 
-![](img/snip of test animation.png)
-
-
-If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
-
-Once you have created the animation, comment out the code that creates the animation (as I have done above). This document won't knit to PDF with the animation code in it. You can only knit to HTML. 
+![](img/snip_test_animation.png)
 
 #### 6. Bookmarks
 
 See https://bmacgtpm.github.io/notes/software-installation.html. 
+
+$\to$ **Answer: I have visited the website and read the materials. It was through this bookdown website that I was able to find how to download the package `pubtheme` through the devtools library.**
 
 
 ## Part 2: Github
 
 #### 7. Create a GitHub account at <https://github.com/> if you don't have one. Submit your GitHub username in Quizzes -> Course Survey on Canvas.
 
-#### 8. Download GitHub Desktop at <https://desktop.github.com/>. 
+$$\\[1in]$$
+
+$\to$ **Answer: I have submitted my handle through the survey. My handle: boseong-yun**
+
+#### 8. Download GitHub Desktop at <https://desktop.github.com/>.  
 
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
+$\to$ **Answer: The following picture is a screenshot of my Github Desktop in action.**
 
-![](img/snip of GitHub Desktop.png)
 
-If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
+![](img/github_desktop.png)
+
 
 #### 9. Clone the repo <https://github.com/bmacGTPM/361-Spring-2024> and create PR as follows.
 
-Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. Do not attempt to approve the pull request, just create it. 
+Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
 
-For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
+$\to$ **Answer: I have (1) cloned the repo and (2) created a new branch `boseong-yun`. (3) I have made an edit to the R Markdown file to have my name at the top instead of mine. To help you grade easily, I have created a folder `pset_submission_files` where all my answers (and the replication files and codes) are conveniently located in a single folder. (4) Finally, I have committed, pushed, and created a pull-request to the main branch on the 361-Spring-2024 repo with the boseong-yun as the title of my pull request**
 
-If you find yourself getting too many GitHub notifications, you can go to https://github.com/watching to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions. 
 
 #### 10. Set up Github Copilot in RStudio
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
 
-If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
+$\to$ **Answer: The following figure shows that (1) my Github Copilot is successfully paired in the system settings and (2) the code preview works as desired in the background :) **
 
-It might take a few days to get final approval.  Once you submit the information they ask for, they will say you will receive final approval shortly.  This may take a couple of days.  For the problem set, submit a screenshot of the page that says you need to wait for final approval, or a screenshot of the farthest you are able to get in the process of getting approval. If you don't receive final approval before the assignment due date, not to worry.  It may take longer than usual to receive final approval since it is the beginning of the semester.  
+![](img/github_copilot.png)
+
 
 
